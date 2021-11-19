@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ServicioCarterasService } from 'src/app/servicio-carteras.service';
-import { ServicioTransaccionService } from 'src/app/servicio-transaccion.service';
-import { PrecioTotalService } from 'src/app/precio-total.service'
+import { ServicioCarterasService } from 'src/app/services/servicio-carteras.service';
+import { ServicioTransaccionService } from 'src/app/services/servicio-transaccion.service';
+import { PrecioTotalService } from 'src/app/services/precio-total.service'
  
 
 
@@ -97,7 +97,6 @@ export class MonedasComponent implements OnInit{
     }
     this.servicioTransaccion.disparadorTransacciones.emit(transaccion)
     this.precioTotal.disparadorTotal.emit(transaccion.precio)
-    console.log(transaccion.precio);
   }; 
   correctoVenta(modal: any){
     this.modalService.open(modal);
@@ -111,7 +110,6 @@ export class MonedasComponent implements OnInit{
     }
     this.servicioTransaccion.disparadorTransacciones.emit(transaccion)
     this.precioTotal.disparadorTotal.emit(transaccion.precio)
-    console.log(transaccion.precio);
   }; 
   public listaCarteras:Array<any>=[]
 }

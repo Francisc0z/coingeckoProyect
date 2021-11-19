@@ -1,5 +1,5 @@
-<div class="container">
-    <button (click)="aniadir(usuarioModal)" class="custom-btn btn-15">Crear cartera</button>
+<div class="container tabla">
+    <button (click)="aniadir(usuarioModal)" class="custom-btn btn-15 margenBoton">Crear cartera</button>
     <table ngTable class="table table-dark mt-4">
         <thead>
             <tr>
@@ -20,7 +20,7 @@
                         <span><button class="btn btn-success" (click)="mostrarTransacciones(i)">Ver</button></span>
                     </td>
                     <td class="text-center">
-                        <button class="btn btn-danger" (click)="eliminarM(eliminarModal);EliminarCartera(i)">X</button>
+                        <button class="btn" (click)="eliminarM(eliminarModal);EliminarCartera(i)"><img src="../../../assets/boton-x.png" style="width: 2rem;" alt=""></button>
                     </td>
             </tr>
         </tbody>

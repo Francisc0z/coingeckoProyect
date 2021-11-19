@@ -23,10 +23,10 @@
                         {{coin.price_change_percentage_24h.toLocaleString()}}
                     </td>
                     <td class="text-center">
-                        <button (click)="compra(compraModal);guardar(coin.image,coin.current_price, coin.name)" class="btn btn-success">+</button>
+                        <button (click)="compra(compraModal);guardar(coin.image,coin.current_price, coin.name)" class="btn"><img src="../../../assets/anadir (1).png" style="width: 2rem;" alt=""></button>
                     </td>
                     <td class="text-center">
-                        <button (click)="venta(ventaModal);guardar(coin.image,coin.current_price, coin.name)" class="btn btn-danger">-</button>
+                        <button (click)="venta(ventaModal);guardar(coin.image,coin.current_price, coin.name)" class="btn"><img src="../../../assets/eliminar (2).png" style="width: 2rem;" alt=""></button>
                     </td>
                 </tr>
             </tbody>
@@ -63,7 +63,7 @@
     </ng-template>
     <ng-template #ventaModal let-c="close" let-d="dismiss">
         <div class="modal-header">
-            <h3 class="modal-title text-success">Vender cryptos</h3>
+            <h3 class="modal-title text-danger">Vender cryptos</h3>
             <button type="button" class="close" class="btn btn-danger mt-3" (click)="c('')">X</button>
         </div>
         <div class="modal-body">
@@ -83,7 +83,7 @@
                 <input type="" [(ngModel)]="monto" name="monto" class="form-control" placeholder="Ingresar el monto">
                 </div>
                 <div class="form-group">
-                    <label class="text-success mt-3">El precio total es de: {{((monto)*precioCrypto).toLocaleString()}}$</label>
+                    <label class="text-danger mt-3">El precio total es de: {{((monto)*precioCrypto).toLocaleString()}}$</label>
                 </div>
                 <button type="submit" (click)="c('');correctoVenta(correctoModal)" class="btn btn-success mt-3">Confirmar</button>
             </form>

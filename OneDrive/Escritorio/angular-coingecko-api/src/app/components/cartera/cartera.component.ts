@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicioTransaccionService } from 'src/app/servicio-transaccion.service';
-import { MostrarTransService } from 'src/app/mostrar-trans.service';
+import { ServicioTransaccionService } from 'src/app/services/servicio-transaccion.service';
+import { MostrarTransService } from 'src/app/services/mostrar-trans.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { NombreCarteraService } from 'src/app/nombre-cartera.service';
-import { EliminarTransaccionService } from 'src/app/eliminar-transaccion.service'
+import { NombreCarteraService } from 'src/app/services/nombre-cartera.service';
+import { EliminarTransaccionService } from 'src/app/services/eliminar-transaccion.service'
  
 
 @Component({
@@ -39,9 +39,8 @@ export class CarteraComponent implements OnInit {
       for (let index = 0; index < this.listaTransacciones.length; index++) {
         if (this.nombreCar==this.listaTransacciones[index].cartera) {
           this.listaTransaccionesFiltrada[index]=this.listaTransacciones[index];
-          console.log("bien")
         }else{
-          
+          console.log("Error en la comparacion de cartera y transaccion")
         }
       }
     });
@@ -51,7 +50,6 @@ export class CarteraComponent implements OnInit {
   };
   EliminarTransaccion(valor:any, precio:any){
     this.listaTransaccionesFiltrada.splice(valor,1)
-    console.log(precio)
     this.eliminarTransaccion.disparadorEliminarTransaccion.emit(precio)
   }
   

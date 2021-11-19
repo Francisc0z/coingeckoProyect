@@ -1,11 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ServicioCarterasService } from 'src/app/servicio-carteras.service';
-import { ServicioTransaccionService } from 'src/app/servicio-transaccion.service';
-import { MostrarTransService } from 'src/app/mostrar-trans.service';
-import { NombreCarteraService } from 'src/app/nombre-cartera.service';
-import { PrecioTotalService } from 'src/app/precio-total.service'
-import { EliminarTransaccionService } from 'src/app/eliminar-transaccion.service'
+import { ServicioCarterasService } from 'src/app/services/servicio-carteras.service';
+import { MostrarTransService } from 'src/app/services/mostrar-trans.service';
+import { NombreCarteraService } from 'src/app/services/nombre-cartera.service';
+import { PrecioTotalService } from 'src/app/services/precio-total.service'
+import { EliminarTransaccionService } from 'src/app/services/eliminar-transaccion.service'
 
 
 @Component({
@@ -29,7 +28,7 @@ export class CryptoComponent implements OnInit {
   titles: string[]=[
     'Cartera',
     'Valor Total',
-    'Transac',
+    'Transacciones',
     'Eliminar'
   ];
   aniadir(modal: any){
@@ -45,11 +44,9 @@ export class CryptoComponent implements OnInit {
     this.precioTotal.disparadorTotal.subscribe((precioTotal) => {
       this.precioTotal = precioTotal;
       this.precioFinal= this.precioFinal+precioTotal;
-      console.log(this.precioFinal)
     });
     this.eliminarTransaccion.disparadorEliminarTransaccion.subscribe((precioEliminar) => {
       this.precioEliminar = precioEliminar;
-      console.log(precioEliminar)
       this.precioFinal= this.precioFinal-precioEliminar;
     });
   }
@@ -72,7 +69,6 @@ export class CryptoComponent implements OnInit {
   mostrarTransacciones(valor:any){
     let condicion=false;
     let nombreCar=this.carteras[valor].nombre
-    console.log(this.carteras[valor].nombre)
     this.mostrarTrans.disparadorMostrar.emit(condicion);
     this.nombreCartera.disparadorNombre.emit(nombreCar);
   }

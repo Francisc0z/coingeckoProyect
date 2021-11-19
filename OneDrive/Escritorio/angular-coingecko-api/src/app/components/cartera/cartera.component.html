@@ -1,4 +1,4 @@
-<div class="container table-responsive" [hidden]="condicion">
+<div class="container table-responsive tabla" [hidden]="condicion">
     <table ngTable class="table table-dark mt-4">
         <thead>
             <tr>
@@ -24,7 +24,7 @@
                     <span>{{trans.fecha}}</span>
                 </td>
                 <td class="text-center">
-                    <button class="btn btn-danger" (click)="eliminarM(eliminarModal);EliminarTransaccion(i, trans.precio)" >X</button>
+                    <button class="btn" (click)="eliminarM(eliminarModal);EliminarTransaccion(i, trans.precio)"><img src="../../../assets/boton-x.png" style="width: 2rem;" alt=""></button>
                 </td>
             </tr>
         </tbody>

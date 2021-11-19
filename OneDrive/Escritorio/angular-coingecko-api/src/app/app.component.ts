@@ -1,5 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { CryptoComponent } from "src/app/components/crypto/crypto.component";
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -29,7 +28,6 @@ export class AppComponent implements OnInit{
   }
   recibirMensaje(variable:any){
     this.ocultar=variable;
-    console.log("DIOSSS")
   }
 
 }
