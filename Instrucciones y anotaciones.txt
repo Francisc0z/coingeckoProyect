@@ -1,0 +1,33 @@
+-----------------------Versiones----------------------
+
+Angular CLI: 12.0.5
+Node: 16.13.0
+Package Manager: npm 8.1.3
+OS: win32 x64
+Angular: 12.0.5
+
+------------Pasos para ejecutar el proyecto-----------
+
+1- Ejecutar el comando "ng serve" dentro del directorio
+principal del proyecto
+2- Ir al link indicado "http://localhost:4200/"
+
+------------------------Anotaciones-------------------
+
+Desde ya les agradezco infinitamente el tiempo que me 
+brindaron, espero podes seguir el proceso de seleccion,
+capacitarme y crecer junto a ustedes.
+El proyecto fue muy interesante y divertido, se que aun
+puedo mejorar muchisimas cosas, pero por motivos de tiempo
+no tuve la oportunidad, agradeceria que lo juzgaran teniendo
+en cuenta eso.
+Hay algunas funcionalidades no añadidas directamente:
+ -Modificar carteras y transacciones: No lo vi necesario
+teniendo en cuenta que el proyecto utiliza memoria cache
+y cualquier cambio se pierde al recargar la pagina.
+ -Mostrar la cantidad de activos de cada cartera: Me resulto
+complicada y poco util a nivel visual la integracion de esta 
+caracteristica, de cualquier manera no supone un reto añadirla.
+
+Francisco Silva.
+
